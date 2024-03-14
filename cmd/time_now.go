@@ -1,13 +1,18 @@
 package cmd
 
 import (
+	"clidev/pkg/timer"
+	"fmt"
+	"time"
+
 	"github.com/spf13/cobra"
 )
 
 // add flag var here
 
 var timeNowRunFunc = func(cmd *cobra.Command, args []string) {
-
+	nowTime := timer.GetNowTime()
+	fmt.Printf("Output:%s,%d", nowTime.Format(time.RFC3339), nowTime.Unix())
 }
 var timeNowCmd = &cobra.Command{
 	Use:   "now",
