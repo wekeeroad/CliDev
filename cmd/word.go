@@ -21,7 +21,7 @@ const (
 var str string
 var mode int8
 
-var runCommand = func(cmd *cobra.Command, args []string) {
+var wordRunFunc = func(cmd *cobra.Command, args []string) {
 	var content string
 	switch mode {
 	case ModeUpper:
@@ -52,7 +52,7 @@ var wordCmd = &cobra.Command{
 	Use:   "word",
 	Short: "word format convert",
 	Long:  desc,
-	Run:   runCommand,
+	Run:   wordRunFunc,
 }
 
 func init() {

@@ -13,6 +13,7 @@ var rootCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(wordCmd)
+	rootCmd.AddCommand(timeCmd)
 }
 
 func Execute() error {
